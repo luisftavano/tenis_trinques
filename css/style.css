@@ -1,0 +1,397 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700; /* Peso mais forte para títulos */
+}
+
+/* Define Montserrat para os parágrafos */
+p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400; /* Peso padrão para parágrafos */
+}
+
+/* Aplica negrito usando Montserrat quando strong for usado */
+p strong {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; /* Deixa o strong em negrito */
+}
+
+/* Aplica negrito usando Poppins nos títulos */
+h1 strong, h2 strong, h3 strong {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700; /* Strong com Poppins em títulos */
+}
+
+/* Ajustes gerais para o corpo */
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6; /* Espaçamento para melhorar a leitura */
+}
+
+html, body {
+    height: 100%; /* Certifica que o body ocupe a altura total */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #F4F4F4;
+}
+
+header {
+    background-color: #c2c2c27c; 
+    padding: 20px 0;
+    text-align: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding-right: 0 20px;
+}
+
+.logo {
+    margin-right: 20px;
+    padding-left: 100px;
+}
+
+.logo-container h2 {
+    color: #ff0000;
+    font-size: 22px;
+}
+
+nav {
+    flex-grow: 1; 
+}
+
+header ul {
+    list-style: none;
+    padding-right: 35%;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    align-items: center; 
+}
+
+header ul li {
+    margin: 0 15px;
+    position: relative;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: #ff0000; /* Cor das palavras */
+    font-weight: bold;
+}
+
+header ul li a:hover {
+    color: #ff5050; /* Cor mais clara no hover */
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    text-align: left;
+    padding: 10px 0;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover > a {
+    color: black;
+}
+
+.logo img {
+    height: 100px;
+}
+
+/* Estilo da seção "Sobre Nós" */
+/* Estilo da seção "Sobre Nós" */
+.sobre-nos {
+    background-color: #f0f0f0;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.sobre-nos h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff0000;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Efeitos para a seção "Sobre Nós" */
+.sobre-nos .container {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color:#c2c2c27c ;
+}
+
+.sobre-nos .container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.sobre-nos p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: black;
+    text-align: justify;
+}
+
+/* Estilo da seção "Nossa Missão" */
+.nossa-missao {
+    background-color: #f0f0f0;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.nossa-missao h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff0000;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Efeitos para a seção "Nossa Missão" */
+.nossa-missao .container {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #c2c2c27c;
+}
+
+.nossa-missao .container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Estilo da seção "Pacotes" (imagens) */
+.secao-imagens {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: #f0f0f0;
+    padding: 50px 0;
+}
+
+.secao-imagens h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #ff0000;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+/* Efeitos nas imagens da seção "Pacotes" */
+.imagem-container {
+    width: calc(20% - 20px);
+    margin: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #c2c2c27c;
+}
+
+.imagem-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.imagem-container img {
+    max-width: 100px;
+    max-height: 100px;
+    margin-bottom: 10px;
+}
+
+.imagem-container h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.imagem-container a {
+    color: #ff0000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.imagem-container a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo geral do main */
+main {
+    flex: 1;
+}
+
+
+footer {
+    background-color: #c2c2c27c; /* Cor de fundo */
+    padding: 20px 0;
+    width: 100%;
+    box-sizing: border-box; /* Inclui o padding na altura total do footer */
+}
+
+.footer-container {
+    display: flex;
+    align-items: center; /* Alinha verticalmente */
+    justify-content: space-evenly; /* Distribui o espaço entre os itens */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* Espaçamento interno */
+    margin-left: 20px;
+}
+
+.footer-logo {
+    margin-right: 30px; /* Espaço entre o logo e a info */
+}
+
+.footer-logo img {
+    max-height: 75px; /* Define a altura máxima da imagem */
+    width: auto; /* Mantém a proporção da imagem */
+}
+
+.footer-info {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    color: #ff0000; /* Cor do texto */
+    margin-right: auto; /* Empurra a nav e social media para a direita */
+}
+
+.footer-info p {
+    margin: 5px 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.footer-nav-social {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espaço entre a barra de navegação e os ícones sociais */
+    margin-right: -400px;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 20px;
+    align-items: center; /* Alinha verticalmente a nav */
+}
+
+.footer-nav a {
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    color: #ff0000; /* Cor dos links */
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.footer-nav a:hover {
+    color: #ff5050; /* Cor dos links ao passar o mouse */
+}
+
+.footer-social {
+    display: flex;
+    gap: 10px;
+    align-items: center; /* Alinha verticalmente os ícones sociais */
+    
+}
+
+.footer-social a img {
+    width: 30px;
+    height: 30px;
+}
+
+.footer-credits {
+    text-align: center;
+    color: black;
+    padding: 10px 0;
+}
+
+.footer-credits p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.footer-credits strong {
+    font-weight: bold;
+}
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366; /* Verde WhatsApp */
+    color: white;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 3px #ccc;
+    z-index: 999;
+    font-size: 30px;
+}
+
+@media (max-width: 768px) {
+    .logo-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-nav {
+        flex-direction: column;
+    }
+}

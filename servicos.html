@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <title>Tênis Nos Trinques</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ /* Define Poppins para todos os títulos */
+ h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700; /* Peso mais forte para títulos */
+        }
+
+        /* Define Montserrat para os parágrafos */
+        p {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400; /* Peso padrão para parágrafos */
+        }
+
+        /* Aplica negrito usando Montserrat quando strong for usado */
+        p strong {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700; /* Deixa o strong em negrito */
+        }
+
+        /* Aplica negrito usando Poppins nos títulos */
+        h1 strong, h2 strong, h3 strong {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700; /* Strong com Poppins em títulos */
+        }
+
+        /* Ajustes gerais para o corpo */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6; /* Espaçamento para melhorar a leitura */
+        }
+
+html, body {
+    height: 100%; /* Certifica que o body ocupe a altura total */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #F4F4F4;
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+    background-color: #c2c2c27c; 
+    padding: 20px 0;
+    text-align: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding-right: 0 20px;
+}
+
+.logo {
+    margin-right: 20px;
+    padding-left: 100px;
+}
+
+.logo-container h2 {
+    color: #ff0000;
+    font-size: 22px;
+}
+
+nav {
+    flex-grow: 1; 
+}
+
+header ul {
+    list-style: none;
+    padding-right: 35%;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    align-items: center; 
+}
+
+header ul li {
+    margin: 0 15px;
+    position: relative;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: #ff0000; /* Cor das palavras */
+    font-weight: bold;
+}
+
+header ul li a:hover {
+    color: #ff5050; /* Cor mais clara no hover */
+}
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    text-align: left;
+    padding: 10px 0;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover > a {
+    color: black;
+}
+
+.logo img {
+    height: 100px;
+}
+/* Container Geral */
+#servicos {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+#servicos h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+    position: relative;
+}
+
+#servicos h2::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 4px;
+    background-color: #ff4500;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+}
+
+/* Serviços */
+.servicos-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.servico {
+    padding: 20px;
+    border-radius: 12px;
+    background-color:#c2c2c27c ;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servico:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.servico h3 {
+    font-size: 1.5rem;
+    color: #ff4500;
+    margin-bottom: 10px;
+}
+
+.servico p {
+    font-size: 1rem;
+    color: #333;
+}
+
+.preco {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000;
+}
+
+
+.trabalhos-feitos {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.trabalhos-feitos h2 {
+    font-size: 2rem;
+    color: #ff4500;
+    margin-bottom: 20px;
+}
+
+/* Fotos dos Serviços */
+.fotos-servicos {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.servico-img-container {
+    width: 23%;
+}
+
+.servico-img {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.servico-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo da seção de contato */
+.contato {
+    background-color: #ff0000;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    margin-bottom: 100px;
+}
+
+.contato h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    animation: floatText 2s infinite ease-in-out; /* Animação aplicada ao h2 */
+}
+
+.contato p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    font-family: 'Montserrat', sans-serif;
+    animation: floatText 2s infinite ease-in-out; /* Animação aplicada ao parágrafo */
+}
+
+.btn-contato {
+    background-color: white;
+    color: #ff4500;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-contato:hover {
+    background-color: #ffe5d5;
+}
+
+/* Animação de flutuação das letras */
+@keyframes floatText {
+    0% {
+        transform: translateY(0); /* Posição inicial */
+    }
+    50% {
+        transform: translateY(-10px); /* Move o texto para cima */
+    }
+    100% {
+        transform: translateY(0); /* Volta para a posição inicial */
+    }
+}
+
+
+
+
+/* Animação de entrada */
+[data-aos="fade-up"] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+[data-aos="fade-up"].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+footer {
+    background-color: #c2c2c27c; /* Cor de fundo */
+    padding: 20px 0;
+    width: 100%;
+    box-sizing: border-box; /* Inclui o padding na altura total do footer */
+}
+
+.footer-container {
+    display: flex;
+    align-items: center; /* Alinha verticalmente */
+    justify-content: space-evenly; /* Distribui o espaço entre os itens */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* Espaçamento interno */
+    margin-left: 20px;
+}
+
+.footer-logo {
+    margin-right: 30px; /* Espaço entre o logo e a info */
+}
+
+.footer-logo img {
+    max-height: 75px; /* Define a altura máxima da imagem */
+    width: auto; /* Mantém a proporção da imagem */
+}
+
+.footer-info {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    color: #ff0000; /* Cor do texto */
+    margin-right: auto; /* Empurra a nav e social media para a direita */
+}
+
+.footer-info p {
+    margin: 5px 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.footer-nav-social {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espaço entre a barra de navegação e os ícones sociais */
+    margin-right: -400px;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 20px;
+    align-items: center; /* Alinha verticalmente a nav */
+}
+
+.footer-nav a {
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    color: #ff0000; /* Cor dos links */
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.footer-nav a:hover {
+    color: #ff5050; /* Cor dos links ao passar o mouse */
+}
+
+.footer-social {
+    display: flex;
+    gap: 10px;
+    align-items: center; /* Alinha verticalmente os ícones sociais */
+    
+}
+
+.footer-social a img {
+    width: 30px;
+    height: 30px;
+}
+
+.footer-credits {
+    text-align: center;
+    color: black;
+    padding: 10px 0;
+}
+
+.footer-credits p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.footer-credits strong {
+    font-weight: bold;
+}
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366; /* Verde WhatsApp */
+    color: white;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 3px #ccc;
+    z-index: 999;
+    font-size: 30px;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo">
+                <a href="index.html"><img src="Imagens/Logo-Tenis-removebg-preview.png" alt="Logo do Site"></a>
+            </div>
+            <h2>Tênis Nos Trinques</h2>
+            <nav>
+                <ul data-aos="fade-left">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li class="dropdown">
+                        <a href="#contato">Contato</a>
+                        <div class="dropdown-content">
+                            <a href="https://wa.me/5511943640901" target="_blank">WhatsApp</a>
+                            <a href="https://www.instagram.com/tenisnostrinques?igsh=ZnR6Z3BtNGlpZjYy" target="_blank">Instagram</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="servicos">
+            <h2>Nossos Serviços</h2>
+            <div class="servicos-container">
+                <div class="servico" data-aos="fade-up">
+                    <h3>Limpeza Completa</h3>
+                    <p>Higienização interna e Externa + Neutralizador de Odores</p>
+                    <p class="preco"><strong>R$59,99</strong></p>
+                </div>
+                <div class="servico" data-aos="fade-up">
+                    <h3>Hidratação de Camurça</h3>
+                    <p class="preco"><strong>R$15,99</strong></p>
+                </div>
+                <div class="servico" data-aos="fade-up">
+                    <h3>Remoção de Marca de Uso</h3>
+                    <p class="preco"><strong>R$19,99</strong></p>
+                </div>
+                <div class="servico" data-aos="fade-up">
+                    <h3>Renovação de Pintura (Completa)</h3>
+                    <p class="preco"><strong>R$79,99</strong></p>
+                </div>
+                <div class="servico" data-aos="fade-up">
+                    <h3>Renovação de Pintura (Detalhes)</h3>
+                    <p class="preco"><strong>R$49,99</strong></p>
+                </div>
+                <div class="servico" data-aos="fade-up">
+                    <h3>Sessão de Clareamento</h3>
+                    <p class="preco"><strong>R$39,99</strong></p>
+                </div>
+                <div class="servico" data-aos="fade-up">
+                    <h3>Colagem</h3>
+                    <p class="preco"><strong>A partir de R$29,99</strong></p>
+                </div>
+                <div class="servico" data-aos="fade-up">
+                    <h3>Restauração Completa</h3>
+                    <p>Higienização interna e Externa + Neutralizador de Odores + Remoção de marca de uso + Clareamento + Renovação de Pintura “Detalhes”</p>
+                    <p class="preco"><strong>R$139,99</strong></p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="trabalhos-feitos">
+        <h2>Trabalhos Feitos</h2>
+        <div class="fotos-servicos">
+            <div class="servico-img-container">
+                <img src="Imagens/Hidrata-CarmucaAdidas.jpeg" alt="Foto 1" class="servico-img">
+            </div>
+            <div class="servico-img-container">
+                <img src="Imagens/Hidrata-CarmucaVans.jpeg" alt="Foto 2" class="servico-img">
+            </div>
+            <div class="servico-img-container">
+                <img src="Imagens/Remove-marcaUso.jpeg" alt="Foto 3" class="servico-img">
+            </div>
+            <div class="servico-img-container">
+                <img src="Imagens/RenovacaoPintura.jpeg" alt="Foto 4" class="servico-img">
+            </div>
+        </div>
+    </div>
+    <section class="contato">
+        <h2>Entre em Contato</h2>
+        <p>Estamos prontos para renovar seus tênis. Fale conosco para saber mais!</p>
+        <a href="https://wa.me/5511943640901" class="btn-contato" target="_blank">Fale Conosco via WhatsApp</a>
+    </section>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="Imagens/Logo-Tenis-removebg-preview.png" alt="Logo">
+            </div>
+            <div class="footer-info">
+                <p><strong>Tênis Nos Trinques</strong></p>
+                <p>(11) 94364-0901</p>
+            </div>
+            <div class="footer-nav-social">
+                <nav class="footer-nav">
+                    <a href="index.html">Home</a>
+                    <a href="servicos.html">Serviços</a>
+                    <a href="#contato">Contato</a>
+                </nav>
+                <div class="footer-social">
+                    <a href="https://api.whatsapp.com/send/?phone=%2B5511943640901&text&type=phone_number&app_absent=0" target="_blank">
+                        <img src="Imagens/whatsapp-icon-logo-svgrepo-com.svg" alt="WhatsApp">
+                    </a>
+                    <a href="https://www.instagram.com/tenisnostrinques?igsh=ZnR6Z3BtNGlpZjYy" target="_blank">
+                        <img src="Imagens/instagram-1-svgrepo-com.svg" alt="Instagram">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-credits">
+            <p>Todos os direitos reservados &copy; 2024 | Desenvolvido por <strong>TaSh</strong></p>
+        </div>
+        
+    </footer>
+    <a href="https://api.whatsapp.com/send?phone=5511943640901&text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20seus%20produtos." class="whatsapp-button" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>
