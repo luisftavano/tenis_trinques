@@ -108,6 +108,7 @@ header ul li a {
 header ul li a:hover {
     color: #ff5050; /* Cor mais clara no hover */
 }
+
 .dropdown {
     position: relative;
 }
@@ -396,6 +397,7 @@ footer {
     margin: 0;
     font-size: 14px;
     line-height: 1.5;
+    font-weight: bold;
 }
 
 .footer-credits strong {
@@ -409,14 +411,36 @@ footer {
     background-color: #25d366; /* Verde WhatsApp */
     color: white;
     border-radius: 50%;
-    width: 55px;
-    height: 55px;
+    width: 45px;
+    height: 45px;
     display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: 2px 2px 3px #ccc;
     z-index: 999;
     font-size: 30px;
+    animation: float 4s ease-in-out infinite; /*Flutuação*/
+    outline: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /*Fazer transiçã0*/
+}
+.whatsapp-button img{
+    width: 45px;
+    height: 45px;
+}
+@keyframes float {
+    0%{
+        transform: translate(0);
+    }
+    50%{
+        transform: translateY(-5px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+.whatsapp-button:hover{
+    box-shadow: 0 0 15px rgba(37,211,102,0.7), 0 0 30px rgba(37,211,102,0.5);
+    transform: scale(1.1);
 }
     </style>
 </head>
@@ -536,7 +560,7 @@ footer {
         
     </footer>
     <a href="https://api.whatsapp.com/send?phone=5511943640901&text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20seus%20produtos." class="whatsapp-button" target="_blank">
-        <i class="fab fa-whatsapp"></i>
+        <img src="./Imagens/whatsapp-icon-logo-svgrepo-com.svg" alt="Botão WhatsApp">
     </a>
     <script>
         AOS.init();
