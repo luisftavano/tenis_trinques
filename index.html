@@ -33,6 +33,11 @@
                     </li>
                 </ul>
             </nav>
+            <div class="menu-hamburger" id="mobile-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </header>
     
@@ -131,6 +136,15 @@
     </a>
     <script>
         AOS.init();
+    </script>
+     
+    <script>
+        const mobileMenu = document.getElementById("mobile-menu");
+        const nav = document.querySelector("nav ul");
+
+        function toggleMenu() {
+            nav.classList.toggle("active");
+        }
     </script>
 </body>
 </html>

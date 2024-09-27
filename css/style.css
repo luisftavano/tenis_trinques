@@ -32,6 +32,20 @@ body {
     line-height: 1.6; /* Espaçamento para melhorar a leitura */
 }
 
+.hamburger {
+    display: none; /* Oculta o botão por padrão */
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: auto; /* Alinha à direita */
+}
+
+.hamburger span {
+    background: #000; /* Cor do hambúrguer */
+    height: 3px;
+    width: 25px;
+    margin: 3px 0;
+}
+
 html, body {
     height: 100%; /* Certifica que o body ocupe a altura total */
 }
@@ -270,7 +284,6 @@ main {
     flex: 1;
 }
 
-
 footer {
     background-color: #c2c2c27c; /* Cor de fundo */
     padding: 20px 0;
@@ -280,12 +293,13 @@ footer {
 
 .footer-container {
     display: flex;
+    flex-wrap: wrap;
     align-items: center; /* Alinha verticalmente */
-    justify-content: space-evenly; /* Distribui o espaço entre os itens */
+    justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px; /* Espaçamento interno */
-    margin-left: 20px;
+    position: relative;
 }
 
 .footer-logo {
@@ -314,7 +328,8 @@ footer {
     display: flex;
     align-items: center;
     gap: 20px; /* Espaço entre a barra de navegação e os ícones sociais */
-    margin-right: -400px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
 }
 
 .footer-nav {
@@ -402,19 +417,4 @@ footer {
 .whatsapp-button:hover{
     box-shadow: 0 0 15px rgba(37,211,102,0.7), 0 0 30px rgba(37,211,102,0.5);
     transform: scale(1.1);
-}
-@media (max-width: 768px) {
-    .logo-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .footer-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .footer-nav {
-        flex-direction: column;
-    }
 }

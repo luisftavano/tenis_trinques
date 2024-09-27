@@ -1,0 +1,251 @@
+/* Estilos gerais */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif; /* Aplique a fonte desejada */
+}
+
+header {
+    margin: 0;
+    padding: 0;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Menu hamburger */
+.menu-hamburger {
+    display: none; /* Oculto por padrão */
+}
+
+/* Ajustes para telas menores que 1024px */
+@media (max-width: 1024px) {
+    nav ul {
+        display: none !important; /* Oculta o menu */
+    }
+
+    .logo-container {
+        padding: 20px; /* Ajuste de padding */
+        background-color: #383F3A; /* Cor do fundo */
+        width: 100%;
+    }
+
+    .logo-container h2 {
+        font-size: 16px;
+        margin-left: -55px;
+    }
+
+    .logo img {
+        height: 180px !important;
+        width: auto !important;
+        margin-right: -60px;
+    }
+
+    .menu-hamburger {
+        display: flex !important; /* Exibe o menu hamburger */
+        flex-direction: column;
+        cursor: pointer;
+        width: 30px;
+        height: 20px;
+        justify-content: space-between;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 1001;
+    }
+
+    .menu-hamburger span {
+        display: block;
+        height: 4px;
+        background-color: #9B7D4B;
+        border-radius: 2px;
+    }
+
+    nav ul.active {
+        display: flex !important; /* Exibe o menu quando ativo */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: white;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        width: 200px;
+        z-index: 1000;
+        padding: 1;
+    }
+
+    nav ul li {
+        margin: 25px 0;
+        padding: 5px 25px;
+    }
+
+    .secao-imagens, .sobre-nos, .nossa-missao {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .imagem-container {
+        margin-bottom: 10px;
+    }
+
+    .quadrados-container {
+        flex-direction: column; /* Organiza os quadrados em coluna */
+        gap: 10px;
+    }
+
+    .quadrado {
+        width: 100%;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-info,
+    .footer-nav,
+    .footer-social {
+        margin-top: 20px;
+    }
+
+    #carrossel {
+        display: none; /* Oculta carrossel */
+    }
+}
+
+/* Estilos para telas menores que 768px */
+@media (max-width: 768px) {
+    .logo img {
+        height: 120px; /* Ajuste do tamanho da logo */
+    }
+
+    .imagem-interna {
+        max-width: 100px; /* Tamanho máximo das imagens internas */
+    }
+
+    .quadrados-container {
+        gap: 15px; /* Espaçamento entre quadrados */
+    }
+
+    .quadrado {
+        padding: 15px; /* Padding dos quadrados */
+    }
+}
+
+/* Estilos para telas menores que 480px */
+@media (max-width: 480px) {
+    .imagem-container {
+        height: 300px;
+        margin-bottom: -40px;
+    }
+
+    .imagem-principal {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .titulo-principal {
+        font-size: 20px;
+        padding: 5px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .box-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        max-width: 90%;
+        margin: 10px 0;
+    }
+
+    .imagem-interna {
+        display: none; /* Oculta imagens internas */
+    }
+
+    .box-texto p {
+        font-size: 10px;
+        line-height: 1.9; /* Linha de texto */
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-logo img {
+        max-height: 80px; /* Tamanho máximo da logo no footer */
+    }
+
+    .footer-info {
+        font-size: 12px; /* Tamanho da fonte */
+        margin-bottom: 20px;
+    }
+
+    .footer-nav {
+        flex-direction: column; /* Alinha links do footer em coluna */
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .footer-nav a {
+        font-size: 12px; /* Tamanho da fonte dos links do footer */
+    }
+
+    .footer-social a img {
+        width: 25px; /* Tamanho dos ícones de social */
+        height: 25px;
+    }
+
+    .footer-credits {
+        font-size: 10px; /* Tamanho da fonte dos créditos */
+    }
+}
+
+/* Estilos para o footer em telas menores que 1024px e maiores que 480px */
+@media (min-width: 481px) and (max-width: 1024px) {
+    .footer-container {
+        padding: 20px 0; /* Padding do footer */
+    }
+
+    .footer-logo img {
+        max-height: 100px; /* Tamanho máximo da logo no footer */
+    }
+
+    .footer-info {
+        font-size: 14px; /* Tamanho da fonte do footer */
+    }
+
+    .footer-nav {
+        flex-direction: row; /* Alinha os links do footer em linha */
+        justify-content: center;
+        gap: 20px;
+        margin-top: 10px;
+    }
+
+    .footer-nav a {
+        font-size: 14px; /* Tamanho da fonte dos links do footer */
+    }
+}
+
+/* Ajuste específico para telas maiores que 1024px (desktop) */
+@media (min-width: 1024px) {
+    .carousel {
+        margin-bottom: 100px; /* Mais espaçamento abaixo do carrossel em telas maiores */
+    }
+
+    #entre-em-contato {
+        margin-top: 100px; /* Aumenta o espaçamento superior em telas maiores */
+    }
+}
