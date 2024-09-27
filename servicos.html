@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <title>Tênis Nos Trinques</title>
     <style>
@@ -16,34 +16,28 @@
     padding: 0;
     box-sizing: border-box;
 }
- /* Define Poppins para todos os títulos */
- h1, h2, h3, h4, h5, h6 {
+  /* Define Poppins para todos os títulos */
+  h1, h2, h3, h4, h5, h6 {
             font-family: 'Poppins', sans-serif;
-            font-weight: 700; /* Peso mais forte para títulos */
+            font-weight: 700;
         }
 
         /* Define Montserrat para os parágrafos */
         p {
             font-family: 'Montserrat', sans-serif;
-            font-weight: 400; /* Peso padrão para parágrafos */
+            font-weight: 400;
         }
 
         /* Aplica negrito usando Montserrat quando strong for usado */
         p strong {
             font-family: 'Montserrat', sans-serif;
-            font-weight: 700; /* Deixa o strong em negrito */
+            font-weight: 700;
         }
 
         /* Aplica negrito usando Poppins nos títulos */
         h1 strong, h2 strong, h3 strong {
             font-family: 'Poppins', sans-serif;
-            font-weight: 700; /* Strong com Poppins em títulos */
-        }
-
-        /* Ajustes gerais para o corpo */
-        body {
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.6; /* Espaçamento para melhorar a leitura */
+            font-weight: 700;
         }
 
 html, body {
@@ -200,7 +194,7 @@ header ul li a:hover {
 }
 
 .servico p {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #333;
 }
 
@@ -445,6 +439,65 @@ footer {
     box-shadow: 0 0 15px rgba(37,211,102,0.7), 0 0 30px rgba(37,211,102,0.5);
     transform: scale(1.1);
 }
+
+/* Ajustes para tablets e dispositivos móveis menores que 1024px */
+@media (max-width: 1024px) {
+    nav ul {
+        display: none; /* Oculta o menu por padrão */
+    }
+
+    .menu-hamburger {
+        display: flex; /* Exibe o ícone do menu hambúrguer */
+        flex-direction: column;
+        cursor: pointer;
+        width: 30px;
+        height: 20px;
+        justify-content: space-between;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 1001;
+    }
+
+    .menu-hamburger span {
+        display: block;
+        height: 4px;
+        background-color: #ff0000;
+        border-radius: 2px;
+    }
+
+    nav ul.active {
+        display: flex; /* Exibe o menu quando o hambúrguer é clicado */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: white;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        width: 200px;
+        z-index: 1000;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 15px 0; /* Espaçamento entre os itens */
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #333;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    nav ul li a:hover {
+        color: #ff5050;
+    }
+}
+
+
     </style>
 </head>
 <body>
@@ -454,20 +507,18 @@ footer {
                 <a href="index.html"><img src="Imagens/Logo-Tenis-removebg-preview.png" alt="Logo do Site"></a>
             </div>
             <h2>Tênis Nos Trinques</h2>
+    
+            <!-- Menu de navegação -->
             <nav>
-                <ul data-aos="fade-left">
+                <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="servicos.html">Serviços</a></li>
-                    <li class="dropdown">
-                        <a href="#contato">Contato</a>
-                        <div class="dropdown-content">
-                            <a href="https://wa.me/5511943640901" target="_blank">WhatsApp</a>
-                            <a href="https://www.instagram.com/tenisnostrinques?igsh=ZnR6Z3BtNGlpZjYy" target="_blank">Instagram</a>
-                        </div>
-                    </li>
+                    <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
-            <div class="menu-hamburger" id="mobile-menu" onclick="toggleMenu()">
+    
+            <!-- Ícone do menu hambúrguer -->
+            <div class="menu-hamburger" id="mobile-menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -574,13 +625,16 @@ footer {
         AOS.init();
     </script>
 
-    <script>
-        const mobileMenu = document.getElementById("mobile-menu");
-        const nav = document.querySelector("nav ul");
+<script>
+    const mobileMenu = document.getElementById("mobile-menu");
+    const nav = document.querySelector("nav ul");
 
-        function toggleMenu() {
-            nav.classList.toggle("active");
-        }
-    </script>
+    function toggleMenu() {
+        nav.classList.toggle("active");
+    }
+
+    mobileMenu.addEventListener('click', toggleMenu);
+</script>
+
 </body>
 </html>

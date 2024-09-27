@@ -1,50 +1,29 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Aplicar a fonte Montserrat por padrão */
+body, html {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
 }
+
+/* Garantir que títulos usem Poppins */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Poppins', sans-serif;
-    font-weight: 700; /* Peso mais forte para títulos */
+    font-weight: 700;
 }
 
-/* Define Montserrat para os parágrafos */
-p {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400; /* Peso padrão para parágrafos */
-}
-
-/* Aplica negrito usando Montserrat quando strong for usado */
+/* Negrito para o strong dentro de parágrafos */
 p strong {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 700; /* Deixa o strong em negrito */
+    font-weight: 700;
 }
 
-/* Aplica negrito usando Poppins nos títulos */
+/* Strong em títulos com Poppins */
 h1 strong, h2 strong, h3 strong {
     font-family: 'Poppins', sans-serif;
-    font-weight: 700; /* Strong com Poppins em títulos */
+    font-weight: 700;
 }
 
-/* Ajustes gerais para o corpo */
-body {
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.6; /* Espaçamento para melhorar a leitura */
-}
 
-.hamburger {
-    display: none; /* Oculta o botão por padrão */
-    flex-direction: column;
-    cursor: pointer;
-    margin-left: auto; /* Alinha à direita */
-}
 
-.hamburger span {
-    background: #000; /* Cor do hambúrguer */
-    height: 3px;
-    width: 25px;
-    margin: 3px 0;
-}
 
 html, body {
     height: 100%; /* Certifica que o body ocupe a altura total */

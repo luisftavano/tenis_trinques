@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 
@@ -20,26 +19,25 @@
                 <a href="index.html"><img src="Imagens/Logo-Tenis-removebg-preview.png" alt="Logo do Site"></a>
             </div>
             <h2>Tênis Nos Trinques</h2>
+    
+            <!-- Menu de navegação -->
             <nav>
-                <ul data-aos="fade-left">
+                <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="servicos.html">Serviços</a></li>
-                    <li class="dropdown">
-                        <a href="#contato">Contato</a>
-                        <div class="dropdown-content">
-                            <a href="https://wa.me/5511943640901" target="_blank">WhatsApp</a>
-                            <a href="https://www.instagram.com/tenisnostrinques?igsh=ZnR6Z3BtNGlpZjYy" target="_blank">Instagram</a>
-                        </div>
-                    </li>
+                    <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
-            <div class="menu-hamburger" id="mobile-menu" onclick="toggleMenu()">
+    
+            <!-- Ícone do menu hambúrguer -->
+            <div class="menu-hamburger" id="mobile-menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
         </div>
     </header>
+    
     
     <main>
         <section class="sobre-nos">
@@ -100,6 +98,7 @@
             </div>
         </section>
         
+        
     </main>
 
     <footer>
@@ -138,13 +137,56 @@
         AOS.init();
     </script>
      
-    <script>
-        const mobileMenu = document.getElementById("mobile-menu");
-        const nav = document.querySelector("nav ul");
-
-        function toggleMenu() {
-            nav.classList.toggle("active");
-        }
-    </script>
+     <script>
+         const mobileMenu = document.querySelector('.menu-hamburger');
+         const navMenu = document.querySelector('nav ul');
+         
+         // Toggle do menu hambúrguer
+         mobileMenu.addEventListener('click', () => {
+             navMenu.classList.toggle('active');
+         });
+         
+         // Função para verificar se o elemento está parcialmente visível na tela
+         function isInViewport(element) {
+             const rect = element.getBoundingClientRect();
+             return (
+                 rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
+                 rect.bottom > 0
+             );
+         }
+         
+         // Adiciona a classe "appear" quando a imagem estiver visível
+         function revealImages() {
+             const images = document.querySelectorAll('.imagem-container');
+             images.forEach(image => {
+                 if (isInViewport(image)) {
+                     image.classList.add('appear');
+                 }
+             });
+         }
+         
+         // Função debounce para otimizar o scroll
+         function debounce(func, wait = 20, immediate = true) {
+             let timeout;
+             return function() {
+                 const context = this, args = arguments;
+                 const later = function() {
+                     timeout = null;
+                     if (!immediate) func.apply(context, args);
+                 };
+                 const callNow = immediate && !timeout;
+                 clearTimeout(timeout);
+                 timeout = setTimeout(later, wait);
+                 if (callNow) func.apply(context, args);
+             };
+         }
+         
+         // Verifica as imagens ao rolar a página e ao carregar
+         window.addEventListener('scroll', debounce(revealImages));
+         window.addEventListener('load', revealImages);
+     </script>
+     
+    
+    
 </body>
 </html>
